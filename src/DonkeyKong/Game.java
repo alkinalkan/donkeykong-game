@@ -2,7 +2,6 @@ package DonkeyKong;
 
 import java.awt.Color;
 import java.awt.Graphics;
-//import java.awt.event.KeyEvent;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
@@ -12,9 +11,11 @@ public class Game implements Runnable {
 	// Game positions
 	private int height, width;
 	private String title;
-	// Arrays for levels&&ladders
+
+	// Arrays for levels and ladders
 	public ArrayList<Level> Levels = new ArrayList<Level>();
 	public ArrayList<Ladder> Ladders = new ArrayList<Ladder>();
+
 	// Levels
 	Level level0 = new Level(35, 775, 600, 25);
 	Level level1 = new Level(0, 635, 565, 15);
@@ -22,7 +23,8 @@ public class Game implements Runnable {
 	Level level3 = new Level(0, 350, 565, 15);
 	Level level4 = new Level(35, 210, 600, 15);
 	Level level5 = new Level(0, 70, 565, 15);
-	// Health&&boost&&princess
+
+	// Health, boost, and princess
 	Princess princess = new Princess(10, 25);
 	Health health = new Health();
 	Boost boost = new Boost();
@@ -39,18 +41,20 @@ public class Game implements Runnable {
 	public int counter = 0;
 	private BufferStrategy bs;
 	private Graphics g;
+
 	// States
 	public State gameState;
 	public State menuState;
 	public State winState;
 	public State loseState;
+
 	// Ladders
 	public Ladder ladder0, ladder1, ladder2, ladder3, ladder4;
 
-	public Game(String title, int height, int widht) {
+	public Game(String title, int height, int width) {
 		this.title = title;
 		this.height = height;
-		this.width = widht;
+		this.width = width;
 		keyManager = new KeyManager();
 		Levels.add(level0);
 		Levels.add(level1);
@@ -80,7 +84,6 @@ public class Game implements Runnable {
 		gameState = new GameState(this);
 		menuState = new MenuState(this);
 		State.setState(menuState);
-
 	}
 
 	private void tick() {
@@ -108,7 +111,6 @@ public class Game implements Runnable {
 		if (State.getState() != null) {
 			State.getState().tick();
 		}
-
 	}
 
 	private void render() {
@@ -134,13 +136,11 @@ public class Game implements Runnable {
 		}
 
 		if (Mario.health == 2) {
-
 			g.drawImage(bars[0], 528, 5, 629 / 9, 148 / 9, null);
-
 		} else if (Mario.health == 1) {
 			g.drawImage(bars[1], 528, 5, 629 / 9, 148 / 9, null);
-
 		}
+		
 		if (!Mario.isCollidingHealth) {
 			g.drawImage(healthImage, health.getX(), health.getY(), health.getWidth(), health.getHeight(), null);
 		} else if (Mario.isCollidingHealth) {
@@ -151,7 +151,6 @@ public class Game implements Runnable {
 
 		if (!Mario.checkB) {
 			g.drawImage(boostImage, boost.getX(), boost.getY(), boost.getWidth(), boost.getHeight(), null);
-
 		} else if (Mario.checkB) {
 			boost.setY(1000);
 		}
@@ -228,5 +227,4 @@ public class Game implements Runnable {
 	public void setLadders(ArrayList<Ladder> ladders) {
 		Ladders = ladders;
 	}
-
 }
