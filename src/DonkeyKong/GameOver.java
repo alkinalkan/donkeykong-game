@@ -4,6 +4,11 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 
+/**
+ * The GameOver class represents the game state when the player loses in the Donkey Kong game.
+ * It extends the State class and handles the rendering of the game over screen.
+ * When the restart key is pressed, it transitions the game state to the menu state.
+ */
 public class GameOver extends State {
 	private BufferedImage lose;
 
