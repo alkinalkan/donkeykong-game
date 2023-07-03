@@ -1,49 +1,56 @@
 package DonkeyKong;
 
 public class Level {
-	public int x;
-	public int y;
-	public int width;
-	public int height;
+    public int x;        // x-coordinate of the level
+    public int y;        // y-coordinate of the level
+    public int width;    // width of the level
+    public int height;   // height of the level
 
-	public Level(int x, int y, int width, int height) {
-		super();
-		this.x = x;
-		this.y = y;
-		this.width = width;
-		this.height = height;
-	}
+    public Level(int x, int y, int width, int height) {
+        super();
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+    }
 
-	public int getX() {
-		return x;
-	}
+    // Getter method for x-coordinate
+    public int getX() {
+        return x;
+    }
 
-	public void setX(int x) {
-		this.x = x;
-	}
+    // Setter method for x-coordinate
+    public void setX(int x) {
+        this.x = x;
+    }
 
-	public int getY() {
-		return y;
-	}
+    // Getter method for y-coordinate
+    public int getY() {
+        return y;
+    }
 
-	public void setY(int y) {
-		this.y = y;
-	}
+    // Setter method for y-coordinate
+    public void setY(int y) {
+        this.y = y;
+    }
 
-	public int getWidth() {
-		return width;
-	}
+    // Getter method for width
+    public int getWidth() {
+        return width;
+    }
 
-	public void setWidth(int width) {
-		this.width = width;
-	}
+    // Setter method for width
+    public void setWidth(int width) {
+        this.width = width;
+    }
 
-	public int getHeight() {
-		return height;
-	}
+    // Getter method for height
+    public int getHeight() {
+        return height;
+    }
 
-	public void setHeight(int height) {
-		this.height = height;
-	}
-
+    // Setter method for height
+    public void setHeight(int height) {
+        this.height = height;
+    }
 }
