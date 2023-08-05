@@ -26,16 +26,16 @@ public class GameState extends State {
     @Override
     public void tick() {
         // Call the tick method for each object to update their state
-        mario.tick();
-        barrel.tick();
-        kong.tick();
+        mario.tick();   // Update Mario's state
+        barrel.tick();  // Update Barrel's state
+        kong.tick();    // Update Kong's state
     }
 
     @Override
     public void render(Graphics g) {
         // Call the render method for each object to draw them on the screen
-        mario.render(g);
-        barrel.render(g);
-        kong.render(g);
+        mario.render(g);    // Draw Mario on the screen
+        barrel.render(g);   // Draw Barrel on the screen
+        kong.render(g);     // Draw Kong on the screen
     }
 }
