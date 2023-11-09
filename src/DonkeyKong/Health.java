@@ -1,34 +1,34 @@
 // Comment:
 /**
- * The Health class represents the health power-ups in the Donkey Kong game.
- * It defines the position, size, and random generation of health power-ups.
+ * The Health class represents health power-ups in the Donkey Kong game.
+ * It defines attributes such as position, size, and random generation for health power-ups.
  */
 package DonkeyKong;
 
 public class Health {
 
-    private int x = 100; // The x-coordinate of the health power-up
-    private int y = 50; // The y-coordinate of the health power-up
-    private int width = 50; // The width of the health power-up
-    private int height = 50; // The height of the health power-up
+    private int x = 100; // Initial x-coordinate of the health power-up
+    private int y = 50; // Initial y-coordinate of the health power-up
+    private int width = 50; // Initial width of the health power-up
+    private int height = 50; // Initial height of the health power-up
 
     public Health() {
-        // Randomly generate the position of the health power-up
-        int a = (int) (Math.random() * (3) + 0);
-        if (a == 2) {
+        // Randomly generate the position of the health power-up within specified areas
+        int areaSelector = (int) (Math.random() * 3); // Choose one of three areas
+        if (areaSelector == 2) {
             y = 25;
-            x = (int) (Math.random() * (385) + 140);
-        } else if (a == 1) {
+            x = (int) (Math.random() * 385 + 140);
+        } else if (areaSelector == 1) {
             y = 305;
-            x = (int) (Math.random() * (525) + 0);
-        } else if (a == 0) {
+            x = (int) (Math.random() * 525);
+        } else { // areaSelector == 0
             y = 585;
-            x = (int) (Math.random() * (525) + 0);
+            x = (int) (Math.random() * 525);
         }
     }
 
     /**
-     * Returns the x-coordinate of the health power-up.
+     * Retrieve the x-coordinate of the health power-up.
      *
      * @return the x-coordinate
      */
@@ -37,7 +37,7 @@ public class Health {
     }
 
     /**
-     * Sets the x-coordinate of the health power-up.
+     * Set the x-coordinate of the health power-up.
      *
      * @param x the new x-coordinate
      */
@@ -46,7 +46,7 @@ public class Health {
     }
 
     /**
-     * Returns the y-coordinate of the health power-up.
+     * Retrieve the y-coordinate of the health power-up.
      *
      * @return the y-coordinate
      */
@@ -55,7 +55,7 @@ public class Health {
     }
 
     /**
-     * Sets the y-coordinate of the health power-up.
+     * Set the y-coordinate of the health power-up.
      *
      * @param y the new y-coordinate
      */
@@ -64,7 +64,7 @@ public class Health {
     }
 
     /**
-     * Returns the width of the health power-up.
+     * Retrieve the width of the health power-up.
      *
      * @return the width
      */
@@ -73,7 +73,7 @@ public class Health {
     }
 
     /**
-     * Sets the width of the health power-up.
+     * Set the width of the health power-up.
      *
      * @param width the new width
      */
@@ -82,7 +82,7 @@ public class Health {
     }
 
     /**
-     * Returns the height of the health power-up.
+     * Retrieve the height of the health power-up.
      *
      * @return the height
      */
@@ -91,7 +91,7 @@ public class Health {
     }
 
     /**
-     * Sets the height of the health power-up.
+     * Set the height of the health power-up.
      *
      * @param height the new height
      */
